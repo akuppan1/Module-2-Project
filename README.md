@@ -129,34 +129,26 @@ The objective of this model was to test which features have a significant influe
 The final features were tested for multicollinearity using a correlation matrix and heatmap.
 ![Correlation Matrix Heat Map](corr_map.png "Correlation Matrix Heat Map")
 
-## 3. Modeling Data
+## 3. Modeling Data & Interpreting Data
 Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels. This generated the following summary.
 
+### i. The Comprehensive Model
 ![OLS Results](ols_results.png "OLS Summary")
 
-### 4. Interpreting the Data
+### ii. The Zipcode Group Model
+![OLS Results](ols_results.png "OLS Summary")
 
-#### R-squared / Adjusted R-squared
-The R-squared value and adjusted R-squared value speak to the accuracy of the model and the relevance of the data. Simplyfing categorical features using binary categories allowed the data from those categories to be used, without creating unncessary complexity. As a result, the R-squared value and the Adjusted R-squared value are identical, indicating that each of the predictors are relevant.
+### iii. Modeling by Zipcode Group
+![OLS Results](ols_results.png "OLS Summary")
 
-#### Coefficients
-| Feature                | Indicates:                                 |
-|:---------              | :-----------                               |
-| sqft_living            |  As square footage increases, the mean price increases. |                               
-| price_per_sqft_living  |  As price per square foot increases, the mean price increases.|
-| zip_avg_price          |  As price per square foot increases, the mean price increases. |
-| zip_avg_sqft           |  As the zipcode average sqft decreases, the mean price tends to increase.  |
-| age_at_sale            |  As age at sale increases, the mean price increases. |
-| zip_age_avg_price      |  As a zipcode's average price by age decreases, the mean price increases. |
-| 4_plus_bedrooms        |  When there are more than 4 bedrooms, the mean price descreases.|
-| 3_plus_bathrooms       |  When there are more than 3 bathrooms, the mean price increases. |
-| 8_plus_grade           |  An increase in grade is associated with an increase in the mean price. |
-| basement               |  When there is a basement, mean price increases.|   
+#### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $134
+![OLS Results](ols_results.png "OLS Summary")
 
+#### Zipcode Group One: Price Per Squarefoot Average per Zipcode > $134, < $171
+![OLS Results](ols_results.png "OLS Summary")
 
+#### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $171, < $210
+![OLS Results](ols_results.png "OLS Summary")
 
-
-
-```python
-
-```
+#### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $210, < $518
+![OLS Results](ols_results.png "OLS Summary")
