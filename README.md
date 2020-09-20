@@ -41,14 +41,6 @@ In this data set, I was provided with the following features:
 If you are interested in how King County determines the grade and condition of the property, take a look at page 33 this guide: <https://www.kingcounty.gov/depts/assessor/Reports/area-reports/2017/residential-westcentral/~/media/depts/assessor/documents/AreaReports/2017/Residential/013.ashx>      
 
 
-
-```python
-%%html
-<style>
-table {float:left}
-</style>
-```
-
 ## II. Navigating the Repo
 
 | Filename        | Description   |
