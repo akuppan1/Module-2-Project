@@ -1,160 +1,286 @@
-
-# Module 2 Final Project
-
-
-## Introduction
-
-In this lesson, we'll review all of the guidelines and specifications for the final project for Module 2.
-
-## Objectives
-You will be able to:
-* Describe all required aspects of the final project for Module 2
-* Describe all required deliverables
-* Describe what constitutes a successful project
-
-## Final Project Summary
-
-Another module down--you're almost half way there!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-2-project-v2-1/master/halfway-there.gif)
-
-All that remains in Module 2 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
-
-## The Dataset
-
-For this project, you'll be working with the King County House Sales dataset. We've modified the dataset to make it a bit more fun and challenging.  The dataset can be found in the file `"kc_house_data.csv"`, in this repo.
-
-The description of the column names can be found in the column_names.md file in this repository. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
-
-You'll clean, explore, and model this dataset with a multivariate linear regression to predict the sale price of houses as accurately as possible.
-
-## The Deliverables
-
-For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
-
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
-4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**	
-5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
-
-Note: On-campus students may have different requirements, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, your Jupyter Notebook should meet the following specifications:
-
-#### Organization/Code Cleanliness
-
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
-
-#### Visualizations & EDA
-
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
-
-#### Model Quality/Approach
-
-* Your model should not include any predictors with p-values greater than .05.  
-* Your notebook shows an iterative approach to modeling, and details the parameters and results of the model at each iteration.  
-    * **Level Up**: Whenever necessary, you briefly explain the changes made from one iteration to the next, and why you made these choices.  
-* You provide at least 1 paragraph explaining your final model.   
-* You pick at least 3 coefficients from your final model and explain their impact on the price of a house in this dataset.   
-
-
-### Non-Technical Presentation Must-Haves
-
-Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to maximize their profit when selling their home.
-
-Your presentation should:
-
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
-
-**_Based on the results of your models, your presentation should discuss at least two concrete features that highly influence housing prices._**
-
-### Blog Post Must-Haves
-
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
-
-
-## The Process 
-The process for this project is identical to the process you followed for your module 1 project. We specified it again below as a refresher.
-(Note: On-campus students may have different processes, please speak with your instructor)
-
-### 1. Getting Started
-
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
-
-Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
-
-Once you're done with this module, please start on the project. Do that by forking this repository, cloning it locally, and working in the student.ipynb file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
-
-### 2. The Project Review
-
-_Note: On-campus students may have different review processes, please speak with your instructor._
-
-> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
-
-#### What to expect from the Project Review
-
-Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
-
-The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
-
-#### 1. Deliver your PDF presentation to a non-technical stakeholder.
-In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
-
-In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
-
-#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
-    * "How did you pick the question(s) that you did?"
-    * "Why are these questions important from a business perspective?"
-    * "How did you decide on the data cleaning options you performed?"
-    * "Why did you choose a given method or library?"
-    * "Why did you select those visualizations and what did you learn from each of them?"
-    * "Why did you pick those features as predictors?"
-    * "How would you interpret the results?"
-    * "How confident are you in the predictive quality of the results?"
-    * "What are some of the things that could cause the results to be wrong?"
-
-Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
-
-If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
-* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
-* Submit an improved version
-* Meet again for another Project Review
-
-What won't happen:
-* You won't be yelled at, belittled, or scolded
-* You won't be put on the spot without support
-* There's nothing you can do to instantly fail or blow it
-
-**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
-
-
-## Submitting your Project
-
- You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
-
- 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
-_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
-2. **Blog Post:** Include a link to your blog post.
-3. **Record Walkthrough:** Include a link to your video walkthrough.
-
- Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
- 
- 
-## Grading Rubric
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-2-project-v2-1/blob/master/mod2_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
-
-
-## Summary
-
-The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# What Makes a House a Home in King County Washington?\n",
+    "**A Linear Regression Model to Predict the Price of a Home**    \n",
+    "*by Christine Egan*\n",
+    "\n",
+    "## Table of Contents\n",
+    "* I. Introduction\n",
+    "* II. Navigating the Repository\n",
+    "* III. Methodology\n",
+    "* IV. Conclusions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## I. Introduction\n",
+    "For this project, I will perform an analysis of the King County housing data set. My objective is to design a linear regression model that will predict the price the of a home in King County, given certain features.\n",
+    "\n",
+    "King County is located in the state of Washington in the United States. Washington is a coastal in the Pacific North West, and is part of the greater Seattle area. It is a diverse county, with rural, suburban, and urban areas. The data set included data from 70 different zipcodes.     \n",
+    "\n",
+    "![King County Zip Code Map](kc_zip_map.png \"King County Zip Code Map\")   \n",
+    "\n",
+    "In this data set, I was provided with the following features:   \n",
+    "* id (a unique identification number for each home)\n",
+    "* date (the date of sale)\n",
+    "* price (the selling price)\n",
+    "* bedrooms (the number of bedrooms)\n",
+    "* bathrooms (the number of bathrooms)\n",
+    "* sqft_living (square footage of the living square)\n",
+    "* sqft_lot (square footage of the lot)\n",
+    "* floors (the number of floors)\n",
+    "* waterfront (indicates if the property was a waterfront property, when available)\n",
+    "* view (indicates the amount of times the home was viewed)\n",
+    "* condition (a scale of 1-5 the indicates how well a home was maintained)\n",
+    "* grade (a scale of 1-13 that indicates the quality of the home, based on...)\n",
+    "* sqft_above (square footage above ground)\n",
+    "* sqft_basement (square footage below ground)\n",
+    "* yr_built (year the home was built)\n",
+    "* yr_renovated (year the home was rennovated)\n",
+    "* zipcode (home location zip code)\n",
+    "* lat (home location latitude)\n",
+    "* long (home location longitude)\n",
+    "* sqft_living15 (square footage of interior housing living space for the nearest 15 neighbors)\n",
+    "* sqft_lot15 (square footage of interior housing lot space for the nearest 15 neighbors)   \n",
+    "\n",
+    "If you are interested in how King County determines the grade and condition of the property, take a look at page 33 this guide: <https://www.kingcounty.gov/depts/assessor/Reports/area-reports/2017/residential-westcentral/~/media/depts/assessor/documents/AreaReports/2017/Residential/013.ashx>      \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>\n",
+       "table {float:left}\n",
+       "</style>\n"
+      ],
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "%%html\n",
+    "<style>\n",
+    "table {float:left}\n",
+    "</style>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## II. Navigating the Repo\n",
+    "\n",
+    "| Filename        | Description   |\n",
+    "| :-------------  |:--------------|\n",
+    "| README.md       | a .md file that is a guide to this repository, the current document           |\n",
+    "| model.ipynb     | a jupyter notebook containg the model, and technical details used to create it|\n",
+    "| my_function.py  | a .py file with collection of custom functions used in model.ipynb            |\n",
+    "| my_functions.md | a .md file with a description of the custom functions in my_functions.py      |\n",
+    "| presentation.pdf| a .pdf file of the non-technical overview of this project                     |\n",
+    "| kc_zip_map.png  | a .png file with an image of King County zip code boundary map                |\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## III. Methodology\n",
+    "For this anaylsis, the OSEMN methodology was used. For the purposes of this document, scrubbing data and exploring data were combined into one section.\n",
+    "\n",
+    "### 1. Obtaining Data\n",
+    "The original dataset can be found at: <https://raw.githubusercontent.com/learn-co-students/dsc-mod-2-project-v2-1-onl01-dtsc-pt-052620/master/kc_house_data.csv>.     \n",
+    "\n",
+    "### 2. Scrubbing & Exploring Data\n",
+    "From the original data, certain features were retained, modified, added, and removed."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Retained / Transformed\n",
+    "| Feature    | Description of Action |\n",
+    "|:---------  | :-----------|\n",
+    "|id          | Some id numbers appeared twice, with different date values, indicating the same home being sold more than once in the same two year period. Duplicate id entries were removed, keeping the first sale.|\n",
+    "|date        | Transformed to datetime object from a string. |\n",
+    "|price       | Outliers with a z-score greater than 3 were removed.|\n",
+    "|sqft_living | Full retained. |      \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Modified\n",
+    "| Feature     | Description of Action |\n",
+    "|:---------   | :-----------|\n",
+    "|bedrooms     | Outliers with z-score greater than 3 were removed. Then, it was used to create the feature '4_plus_bedrooms', which contained 0 or 1 to indicate if there were more or less than 4 bedrooms. |\n",
+    "|bathrooms    | Outliers with z-score greater than 3 were removed. Then, it was used to create the feature '3_plus_bathrooms', which contained 0 or 1 to indicate if there were more or less than 3 bathrooms. |\n",
+    "|grade        | It was used to create the feature '8_plus_grade', which contained a 0 or 1 to indicate if the grade was more or less than 8. \n",
+    "|sqft_basement| Because properties without a basement were represented by zero square feet, it created an exetreme left skew. To remedy, it was transformed into the feature 'basement' with a 0 or 1 to indicate the absence or presence of a basement.|\n",
+    "|yr_built     | Transformed to create 'age_at_sale' using 'date'.\n",
+    "|zipcode      | Transformed to create the features 'zip_avg_price', 'zip_avg_sqft', 'zip_avg_pp_sqft' using 'price.' |\n",
+    "|sqft_living  | Combined with 'price' to create 'price_per_sqft'. |     "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Created\n",
+    "| Feature     | Description of Feature |     \n",
+    "|:---------   | :-----------|\n",
+    "| 4_plus_bedrooms  | Indicates with a 0 or 1 if there are more than 4 bedrooms. |\n",
+    "| 3_plus_bathrooms | Indicates with a 0 or 1 if there are more than 3 bathrooms. |\n",
+    "| 8_plus_grade     | Indicates with a 0 or 1 if the grade is greater than 8. |\n",
+    "| basement         | Indicates with a 0 or 1 if the presence of a basement. |\n",
+    "| age_at_sale      | Indicates the age of a property on the date of sale. |\n",
+    "| zip_avg_price    | Indicates the average price for a property by zipcode. |\n",
+    "| zip_avg_sqft     | Indicates the average of 'sqft_living' per zipcode. |\n",
+    "| zip_avg_pp_sqft  | Indicates the average price per square foot per zipcode. |        "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Eliminated\n",
+    "| Feature     | Reason for Elimination |\n",
+    "|:---------   | :-----------|\n",
+    "| yr_renovated | There was a lot of missing data, making it an unsuitable predictor. |\n",
+    "| floors       | This information was redundant, and similar information could be obtained by examining square footage and number of rooms. |\n",
+    "| waterfront   | There was a lot of missing data, making it an unsuitable predictor. |\n",
+    "| view         | There was a lot of missing data, making it an unsuitable predictor. |\n",
+    "| lat          | Not needed for this analysis. |\n",
+    "| long         | Not needed for this analysis |\n",
+    "| sqft_above   | This information was redundant, and similar information could be obtained by examining square footage and number of rooms. |\n",
+    "| sqft_basement| The skew of this information was severe, so it was used to create a more useful feature, then dropped. |\n",
+    "| sqft_lot     | Exetreme outliers made this data fairly unreliable, and efforts to normalize compromised the accuracy of the results. |\n",
+    "| sqft_living15| Demonstrated high correlation with more useful square foot metrics, such as 'sqft_living'.\n",
+    "| sqft_lot15   | The elimination of other features made it irrelevant for analysis.     "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Final Features\n",
+    "The objective of this model was to test which features have a significant influence on the price of a home in King County. To facilitate this, features were chosen to reflect, the size of the home, the age of the home, the quality of the home, and the location of the home.  \n",
+    "\n",
+    "| Feature                | Indicates:                                 |\n",
+    "|:---------              | :-----------                               |\n",
+    "| sqft_living            |  size                                      |\n",
+    "| price_per_sqft_living  |  a relationship between size and price     |\n",
+    "| zip_avg_price          |  a relationship between location and price |\n",
+    "| zip_avg_sqft           |  a relationship between size and location  |\n",
+    "| age_at_sale            |  age                                       |\n",
+    "| zip_age_avg_price      |  a relationship between age and price      |\n",
+    "| 4_plus_bedrooms        |  size                                      |\n",
+    "| 3_plus_bathrooms       |  size                                      |\n",
+    "| 8_plus_grade           |  quality                                   |\n",
+    "| basement               |  size                                      |   "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Collinearity Check\n",
+    "The final features were tested for multicollinearity using a correlation matrix and heatmap.\n",
+    "![Correlation Matrix Heat Map](corr_map.png \"Correlation Matrix Heat Map\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3. Modeling Data\n",
+    "Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels. This generated the following summary."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "![OLS Results](ols_results.png \"OLS Summary\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 4. Interpreting the Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### R-squared / Adjusted R-squared\n",
+    "The R-squared value and adjusted R-squared value speak to the accuracy of the model and the relevance of the data. Simplyfing categorical features using binary categories allowed the data from those categories to be used, without creating unncessary complexity. As a result, the R-squared value and the Adjusted R-squared value are identical, indicating that each of the predictors are relevant.\n",
+    "\n",
+    "#### Coefficients\n",
+    "| Feature                | Indicates:                                 |\n",
+    "|:---------              | :-----------                               |\n",
+    "| sqft_living            |  As square footage increases, the mean price increases. |                               \n",
+    "| price_per_sqft_living  |  As price per square foot increases, the mean price increases.|\n",
+    "| zip_avg_price          |  As price per square foot increases, the mean price increases. |\n",
+    "| zip_avg_sqft           |  As the zipcode average sqft decreases, the mean price tends to increase.  |\n",
+    "| age_at_sale            |  As age at sale increases, the mean price increases. |\n",
+    "| zip_age_avg_price      |  As a zipcode's average price by age decreases, the mean price increases. |\n",
+    "| 4_plus_bedrooms        |  When there are more than 4 bedrooms, the mean price descreases.|\n",
+    "| 3_plus_bathrooms       |  When there are more than 3 bathrooms, the mean price increases. |\n",
+    "| 8_plus_grade           |  An increase in grade is associated with an increase in the mean price. |\n",
+    "| basement               |  When there is a basement, mean price increases.|   \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:learn-env] *",
+   "language": "python",
+   "name": "conda-env-learn-env-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
