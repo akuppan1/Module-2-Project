@@ -142,16 +142,22 @@ Finally, the resulting data frame was trained and tested with an 70/30 split usi
 ![OLS Results](ols_zc_group_1.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $134
-![OLS Results](ols_zc_group_1.png "OLS Summary")
+Out of all the of the groups, the model was the least effective at predicting prices within this group. According to the P-Values, we cannot reject the null hypothesis with respect zipcode average price per square foot. This is a departure from the other models, where this was an important factor.![OLS Results](ols_zc_group_1.png "OLS Summary")
 
-#### Zipcode Group One: Price Per Squarefoot Average per Zipcode > $134, < $171
+#### Zipcode Group Two: Price Per Squarefoot Average per Zipcode >$134, < $171
+The model was much better at predicting price than in Zipcode Group 1. However, it did not perform as well as The Comprehensive Model, or the Zip Code Group Model.
 ![OLS Results](ols_zc_group_2.png "OLS Summary")
 
-#### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $171, < $210
+#### Zipcode Group Three: Price Per Squarefoot Average per Zipcode  >$171, <$210
+Out of all the zipcode groups, the model performed best when predicting for Zipcode Group 3, with Zipcode Group 2 as a close second. This is somewhat predictable because they are both in close proximity to the mean.
 ![OLS Results](ols_zc_group_3.png "OLS Summary")
 
-#### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $210, < $518
-![OLS Results](ols_zc_group_4.png "OLS Summary")
+#### Zipcode Group Four: Price Per Squarefoot Average per Zipcode  >$210, <$518
+The model predicted Zip Group 4 fairly well. However, it is clear that the null hypothesis with respect to the number of bedrooms cannot be rejected when predicing home prices for Zipcode Group 4. ![OLS Results](ols_zc_group_4.png "OLS Summary")
+
+#### Overall Impressions
+As mentioned above, the model seemed to perform the best when predicting Zipcode Groups 2 and 3. This is most likely due to their proximity to the median price. On the other hand, we can see in Groups 3 and 4, that graphs of the residuals appear more normal and less skewed than groups 1 and 2. 
+
 
 ## IV. Conclusions
 ### Final Thoughts
