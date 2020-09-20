@@ -152,3 +152,18 @@ Finally, the resulting data frame was trained and tested with an 70/30 split usi
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $210, < $518
 ![OLS Results](ols_results.png "OLS Summary")
+
+## IV. Conclusions
+### Final Thoughts
+With respect to R-Squared/Adjusted R-Squared values, the Comprehensive Model performed the best. However, since the zipcode average price per square foot was not segmented into groups, it was hard to discern the relationship between the actual zipcode average and the price for a house.
+
+On the other hand, in the Zipcode Group Model, had a lower R-Squared/Adjusted R-Squared values, but provided some interesting information regarding how each price per square foot average by zipcode quantile interacted with price.
+
+The models that addressed each zip code group individually had mixed results: 
+
+### Future Work
+I think that this analysis could be improved if population data were included in for each zipcode. It is unclear what effect population might have on price. For example, a zipcode that skews more affluent might have a lower population, however the affluent quality of the neighborhood has a more significant increase on price. There is also an argument to be made that in more crowded areas, the price per square foot might be higher as well.  It is possible that using median incomes in addition to population might reveal more about the role population.
+
+In addition in order to expand on the role of location, I think that the lattitude and longitude data would be a useful feature to explore the proximity between a home and Seattle. One hypothesis is that there is an association between income, population, and proximity to Seattle that would influence what a buyer would be willing to pay for a house.
+
+It might also be interesting to see how fluctuations in population and incomes might predict how housing prices might rise or fall over time.
