@@ -34,8 +34,6 @@ def std_describe(df):
     desc_df.loc['+3_std'] = desc_df.loc['mean'] + (desc_df.loc['std'] * 3)
     desc_df.loc['-3_std'] = desc_df.loc['mean'] - (desc_df.loc['std'] * 3)
     print(desc_df)
-    print('<-------------------------------------------------------------------------->')
-
 
 
 def percent_null_df(df):
@@ -61,7 +59,6 @@ def percent_null_df(df):
     print('\n                   Percent Null Report                ')
     print('<------------------------------------------------------>')
     print('\n       Total Percent Null For Data Frame: ', round(df_percent_null, 3), '\n')
-    print('<------------------------------------------------------> \n')
     x = ['column_name','missing_data', 'missing_in_percentage']
     missing_data = pd.DataFrame(columns=x)
     columns = df.columns
@@ -73,7 +70,7 @@ def percent_null_df(df):
     missing_data = missing_data.sort_values(by = 'missing_in_percentage', ascending=False)
     print('           Total Percent Null by Column               \n')
     print(missing_data)
-    print('<------------------------------------------------------>')
+
 
 
 def obtain_data(csv):
@@ -89,11 +86,10 @@ def obtain_data(csv):
     
     '''
     df = pd.read_csv(csv)
-    print(df.info(), '\n')
-    print(std_describe(df), '\n')
-    print(percent_null_df(df), '\n')
+    print(df.info())
+    print()
+    print(percent_null_df(df))
     return df
-
 
 
 # cell 3 functions
