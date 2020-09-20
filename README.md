@@ -133,25 +133,25 @@ The final features were tested for multicollinearity using a correlation matrix 
 Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels. This generated the following summary.
 
 ### i. The Comprehensive Model
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_comp.png "OLS Summary")
 
 ### ii. The Zipcode Group Model
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group.png "OLS Summary")
 
 ### iii. Modeling by Zipcode Group
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group_1.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $134
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group_1.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode > $134, < $171
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group_2.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $171, < $210
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group_3.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $210, < $518
-![OLS Results](ols_results.png "OLS Summary")
+![OLS Results](ols_zc_group_4.png "OLS Summary")
 
 ## IV. Conclusions
 ### Final Thoughts
