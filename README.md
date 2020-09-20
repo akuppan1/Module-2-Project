@@ -49,13 +49,6 @@ table {float:left}
 </style>
 ```
 
-
-<style>
-table {float:left}
-</style>
-
-
-
 ## II. Navigating the Repo
 
 | Filename        | Description   |
