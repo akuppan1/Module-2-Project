@@ -130,7 +130,7 @@ The final features were tested for multicollinearity using a correlation matrix 
 ![Correlation Matrix Heat Map](corr_map.png "Correlation Matrix Heat Map")
 
 ## 3. Modeling Data & Interpreting Data
-Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels. This generated the following summary.
+Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels. Below, are the summary results for three different approaches.
 
 ### i. The Comprehensive Model
 ![OLS Results](ols_comp.png "OLS Summary")
@@ -139,7 +139,6 @@ Finally, the resulting data frame was trained and tested with an 70/30 split usi
 ![OLS Results](ols_zc_group.png "OLS Summary")
 
 ### iii. Modeling by Zipcode Group
-![OLS Results](ols_zc_group_1.png "OLS Summary")
 
 #### Zipcode Group One: Price Per Squarefoot Average per Zipcode < $134
 Out of all the of the groups, the model was the least effective at predicting prices within this group. According to the P-Values, we cannot reject the null hypothesis with respect zipcode average price per square foot. This is a departure from the other models, where this was an important factor.![OLS Results](ols_zc_group_1.png "OLS Summary")
