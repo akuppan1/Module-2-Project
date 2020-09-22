@@ -90,6 +90,7 @@ From the original data, certain features were retained, modified, added, and rem
 | 8_plus_grade     | Indicates with a 0 or 1 if the grade is greater than 8. |
 | basement         | Indicates with a 0 or 1 if the presence of a basement. |
 | age_at_sale      | Indicates the age of a property on the date of sale. |
+| price_per_sqft_living  | Indicates a relationship between size and price, used to obtain averages.|
 | zip_avg_price    | Indicates the average price for a property by zipcode. |
 | zip_avg_sqft     | Indicates the average of 'sqft_living' per zipcode. |
 | zip_avg_pp_sqft  | Indicates the average price per square foot per zipcode. |        
@@ -108,6 +109,7 @@ From the original data, certain features were retained, modified, added, and rem
 | sqft_lot     | Exetreme outliers made this data fairly unreliable, and efforts to normalize compromised the accuracy of the results. |
 | sqft_living15| Demonstrated high correlation with more useful square foot metrics, such as 'sqft_living'.
 | sqft_lot15   | The elimination of other features made it irrelevant for analysis.     
+| price_per_sqft_living  | While this feature was created to obtain averages by zipcode, it is not a suitable predictor because price is needed to calculate price per square foot. As a result, allowing this feature to leak into the testing data set would be essentially the same as including the price column.|
 
 #### Final Features
 The objective of this model was to test which features have a significant influence on the price of a home in King County. To facilitate this, features were chosen to reflect, the size of the home, the age of the home, the quality of the home, and the location of the home.  
@@ -115,7 +117,6 @@ The objective of this model was to test which features have a significant influe
 | Feature                | Indicates:                                 |
 |:---------              | :-----------                               |
 | sqft_living            |  size                                      |
-| price_per_sqft_living  |  a relationship between size and price     |
 | zip_avg_price          |  a relationship between location and price |
 | zip_avg_sqft           |  a relationship between size and location  |
 | age_at_sale            |  age                                       |
