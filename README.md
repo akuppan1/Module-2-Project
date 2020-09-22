@@ -1,6 +1,6 @@
 # What Makes a House a Home in King County Washington?
 **A Linear Regression Model to Predict the Price of a Home**    
-*by Christine Egan*
+
 
 ## Table of Contents
 * I. Introduction
