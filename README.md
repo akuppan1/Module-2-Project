@@ -48,7 +48,6 @@ If you are interested in how King County determines the grade and condition of t
 | README.md       | a .md file that is a guide to this repository, the current document           |
 | model.ipynb     | a jupyter notebook containg the model, and technical details used to create it|
 | my_function.py  | a .py file with collection of custom functions used in model.ipynb            |
-| my_functions.md | a .md file with a description of the custom functions in my_functions.py      |
 | presentation.pdf| a .pdf file of the non-technical overview of this project                     |
 | kc_zip_map.png  | a .png file with an image of King County zip code boundary map                |
 
@@ -57,7 +56,7 @@ If you are interested in how King County determines the grade and condition of t
 For this anaylsis, the OSEMN methodology was used. For the purposes of this document, scrubbing data and exploring data were combined into one section.
 
 ### Hypothesis
-The price of a house in King County can be predicted using data from four distinct categories, listed from greatest influence to least influence:
+The price of a house in King County can be predicted using data from four distinct categories, listed from greatest influence to least influence:     
 **a. Location**     
 The zipcode where a home is located is the primary factor that determines the price of a home.   
 
@@ -209,7 +208,11 @@ As mentioned above, the model seemed to perform the best when predicting within 
 
 ## IV. Conclusions
 ### Final Thoughts
-Once more, we see a cluster of factors working in concert to increase the potential sale price of a home. This makes a lot of sense, when we consider that grade speaks to the quality of the structure, or the 'bones.' Buidings that are said to have 'good bones' retain their value on the market, and can even increase in value if they age gracefully. This ties into condition, as it is resultant on updates and modifications made to the structure. When homes are well built and well maintained, their age becomes an asset. 
+Location seems to be the leading factor that determines the price of a home in King County Washington. However, the ability for the model to predict price relies on the other factors to refine the estimates. 
+
+When it comes to size, there are a cluster of different factors that work together to describe not only the quantity of space, but how much of that space is functional. We see that for two properties, if the square footage of living space is the same, but one contains a basement, we know that is less desirable space, which will decrease the value of the home. Too many bedrooms in a house with below average square feet, is a sign of less functional smaller bedrooms. 
+
+When we consider that grade speaks to the quality of the structure, or the 'bones.' Buidings that are said to have 'good bones' retain their value on the market, and can even increase in value if they age gracefully. This ties into condition, as it is resultant on updates and modifications made to the structure. When homes are well built and well maintained, their age becomes an asset. 
 
 With respect to R-Squared/Adjusted R-Squared values, the Comprehensive Model performed the best. However, since the zipcode average price per square foot was not segmented into groups, it was hard to discern the relationship between the actual zipcode average and the price for a house.
 On the other hand, in the Zipcode Group Model, had a lower R-Squared/Adjusted R-Squared values, but provided some interesting information regarding how each price per square foot average by zipcode quantile interacted with price.
