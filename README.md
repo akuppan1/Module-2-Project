@@ -51,7 +51,7 @@ If you are interested in how King County determines the grade and condition of t
 | functions1.py  | a .py file with collection of custom functions used in model.ipynb            |
 | presentation.pdf| a .pdf file of the non-technical overview of this project                     |
 | kc_zip_map.png  | a .png file with an image of King County zip code boundary map                |
-| ols.png  | ols results                |
+| ols.png  | a .png of  results                |
 | corr_matrix.png  | a .png of correlation matrix heatmap               |
 | qqplot.png  | a .png file with qq plot of residuals               |
 | distplot.png  | a .png file with a distplot of residuals                |
