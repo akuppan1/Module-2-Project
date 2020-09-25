@@ -16,6 +16,10 @@ import statsmodels.stats.api as sms
 import statsmodels.formula.api as smf
 import statsmodels.tsa.api as smt
 
+from scipy.stats import skew
+from scipy.stats import boxcox
+
+from math import radians, cos, sin, asin, sqrt
 
 def std_describe(df):
     '''Retrieves the summary of a pd.DataFrame, adds a metric that represents
@@ -28,7 +32,7 @@ def std_describe(df):
             summary of a pd.DataFrame.describe() with standard deviation metric added
     '''
     print('                  Description with |3| STD Report                          ')
-    print('<------------------------------------------------------------------------->')
+    #print('-------------------------------------------------------------------------')
     desc_df = df.describe()
 
     desc_df.loc['+3_std'] = desc_df.loc['mean'] + (desc_df.loc['std'] * 3)
@@ -57,7 +61,7 @@ def percent_null_df(df):
     '''
     df_percent_null = len(df.isna().sum())/len(df)*100
     print('\n                   Percent Null Report                ')
-    print('<------------------------------------------------------>')
+    print('--------------------------------------------------------')
     print('\n       Total Percent Null For Data Frame: ', round(df_percent_null, 3), '\n')
     x = ['column_name','missing_data', 'missing_in_percentage']
     missing_data = pd.DataFrame(columns=x)
@@ -126,12 +130,12 @@ def idx_select_sort_set(df, indices):
         
         '''
     print('\n                  Index Report                       ')
-    print('<------------------------------------------------------>')
+    print('------------------------------------------------------')
     print('              Primary Index Set as: ', indices[0])
     print('            Secondary Index Set as: ', indices[1], '\n')
           
     print('\n                Duplicate Report                  ')
-    print('<------------------------------------------------------>')    
+    print('------------------------------------------------------')    
     x = df[df[indices[0]].duplicated(keep=False)]
     print('           ', len(x), ' duplicates found in ', indices[0])
     y = x[x[indices[1]].duplicated()]
@@ -155,7 +159,7 @@ def find_nulls(df):
     
     print('\n              Null & Unique Values Report                  ')
     print('               for Columns with Null Values                  ')
-    print('<------------------------------------------------------>')
+    print('------------------------------------------------------')
     
     null_cols = []
     for col in df.columns:
@@ -187,9 +191,10 @@ def rm_outliers_by_zscore(df, cols):
         @output
         df
     '''
+    
     print('\n              Outlier Removal Report                  ')
     print('         for columns: ', cols                      )
-    print('<------------------------------------------------------>')
+    print('------------------------------------------------------')
     total_percent_removed = 0
     total_rows_removed = 0
     
@@ -218,25 +223,51 @@ def rm_outliers_by_zscore(df, cols):
     
     return df
 
-def draw_scatter(y_pred, residual):
-    fig, ax = plt.subplots(figsize=(6,2.5))
-    _ = ax.scatter(y_pred, residual, color='blue')
-    
-    return fig, ax
 
 def corr_heat_map(df, drop_cols):
+    '''Returns a correlation matrix heat map of specified columns 
+    of a pd.Dataframe
+    
+        @params
+        df is a pd.DataFrame
+        drop_cols is a list of columns to drop from the display
+        
+        @outputs
+        sns.heatmap 
+    '''
+    
     fig, ax = plt.subplots(figsize=(12,12))
     corr = df.drop(drop_cols, axis=1).corr()
-    sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True,
-                fmt='.1g', cmap=sns.diverging_palette(220, 10, as_cmap=True))
+    return sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, 
+           annot=True, fmt='.1g', cmap=sns.diverging_palette(220, 10, as_cmap=True))
 
 def draw_qqplot(residual):
+    '''Takes in a residual and returns an qqplot/sp.stats.probplot
+        
+        @params
+        residual is a residual obtained from an OLS model
+        
+        @output
+        an sp.stats.probplot/qqplot    
+    '''
+    
     fig, ax = plt.subplots(figsize=(6,2.5))
     _, (__, ___, r) = sp.stats.probplot(residual, plot=ax, fit=True)
     
     return fig, ax
 
 def reg_summary(X_train, y_train):
+    '''Takes in x/y training sets, fits an OLS regression model
+    and returns a results summary.
+    
+        @params
+        X_train is an x training set obtained from a train_test_split
+        y_train is an x training set obtained from a train_test_split
+        
+        @output
+        a model summary
+    '''
+    
     X_with_constant = sm.add_constant(X_train)
     model = sm.OLS(y_train, X_with_constant)
     results = model.fit()
@@ -245,12 +276,37 @@ def reg_summary(X_train, y_train):
     return results
 
 def get_residual(X_test, y_test, results):
+    '''Takes in x/y test sets, and OLS model results
+   and returns a residual.
+    
+        @params
+        X_test is an x test set obtained from a train_test_split
+        y_test is an x test set obtained from a train_test_split
+        results is ols model.fit()
+        
+        @output
+        a variable representing the residual '''
+
     X_test = sm.add_constant(X_test)
     y_pred = results.predict(X_test)
     residual = y_test - y_pred
     return residual
         
 def validate_reg_assumptions(X, X_train, X_test, y_train, y_test):
+    '''Takes in the variables produced by train_test_split and
+    prints the OLS summary, distplot, scatterplot, and qqplot.
+    
+        @params
+        X is a pd.DataFrame
+        X_train is an x training set obtained from a train_test_split
+        y_train is an x training set obtained from a train_test_split
+        X_test is an x test set obtained from a train_test_split
+        y_test is an x test set obtained from a train_test_split
+        
+        @output
+        A printed display of OLS summary, qqplot, displot, and regplot
+    '''
+    
     print('Retrieving OLS Summary...\n')
     results = reg_summary(X_train, y_train)
     print(results)
@@ -268,5 +324,68 @@ def validate_reg_assumptions(X, X_train, X_test, y_train, y_test):
     print('Mean of Residuals: ', np.mean(residual))
 
     print('\nDisplaying Regplot...\n')
-    draw_scatter(y_pred, residual)
-    sns.regplot(y_pred, residual, color='red')
+    ax = sns.regplot(y_pred, residual, data=X,
+    scatter_kws={"color": "black"}, line_kws={"color": "red"})
+    plt.show()
+    
+def locate_it(data, long, lat, feature):
+    plt.figure(figsize=(16,12))
+    cmap = plt.cm.get_cmap('RdYlBu')
+    sc = plt.scatter(data[long], data[lat],
+                 c=data[feature], vmin=min(data[feature]),
+                 vamx=max(data[feature]), alpha=0.5, s=5,
+                 cmap=cmap)
+    plt.colorbar(sc)
+    plt.xlabel('Longitude')
+    plt.ylabel('Latitude')
+    plt.title('House {} by location'.format(feature), fontsize=18)
+    plt.show();
+    
+def haversine(list_long_lat, other):
+    """
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees), in this case the 2nd point is in the 
+    Pike Pine Retail Core of Seattle, WA.
+    """
+    lon1, lat1 = list_long_lat[0], list_long_lat[1]
+    lon2, lat2 = other[0], other[1]
+    # convert decimal degrees to radians 
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a)) 
+    # Radius of earth in kilometers is 6371
+    km = 6371 * c
+    return km
+
+def box_cox(df, skew_cols):
+    '''
+    with warnings.catch_warnings():
+    warnings.simplefilter("ignore", category=RuntimeWarning)
+    '''
+    skewed_features = df[skew_cols].apply(lambda x : skew (x.dropna())).sort_values(ascending=False)
+
+    #compute skewness
+    skewness = pd.DataFrame({'Skew' :skewed_features})   
+
+    # Get only higest skewed features
+    skewness = skewness[abs(skewness) > 0.7]
+    skewness = skewness.dropna()
+    print ("There are {} higest skewed numerical features to box cox transform".format(skewness.shape[0]))
+
+    l_opt = {}
+
+    for feat in skewness.index:
+        df[feat], l_opt[feat] = boxcox((df[feat]+1))
+
+        skewed_features2 = df[skewness.index].apply(lambda x : skew (x.dropna())).sort_values(ascending=False)
+
+        #compute skewness
+        skewness2 = pd.DataFrame({'New Skew' :skewed_features2})   
+        x = display(pd.concat([skewness, skewness2], axis=1).sort_values(by=['Skew'], ascending=False))
+    print(x)
+    
+    return df
+
