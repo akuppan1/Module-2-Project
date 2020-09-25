@@ -68,12 +68,10 @@ The price of a home in King County can be predicted by distance from Seattle or 
 The original dataset can be found at: <https://raw.githubusercontent.com/learn-co-students/dsc-mod-2-project-v2-1-onl01-dtsc-pt-052620/master/kc_house_data.csv>.     
 
 ### 2. Scrubbing & Exploring Data
-From the original data, certain features were retained, modified, added, and removed.
+Outliers with a z-score over 3 were removed from  'price', 'bedrooms', 'bathrooms','sqft_living', 'grade'.    
+From the original data a Box-Cox transformation was performed on 'price', 'sqft_living', 'sqft_lot', 'sqft_above', and 'sqft_basement'.    
 
-
-#### Created
-The following features were eliminated:
-
+Some features were eliminated.
 | Feature     | Reason for Elimination |
 |:---------   | :-----------|    
 | data | There are only two years represented in this data set. |
@@ -91,7 +89,7 @@ The final features were tested for multicollinearity using a correlation matrix 
 
 ## 3. Modeling Data & Interpreting Data
 Finally, the resulting data frame was trained and tested with an 70/30 split using OLS statsmodels.
-![Correlation Matrix Heat Map](ols.png "Correlation Matrix Heat Map") 
+![ols](ols.png "Correlation Matrix Heat Map") 
 
 
 #### R-Squared/Adjusted R-Squared
