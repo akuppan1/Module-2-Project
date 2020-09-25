@@ -108,9 +108,9 @@ The t-values all seem high enough, with the sqft_living t-value being particular
 #### Satisfying the Assumptions of Linear Regression
 The data appears to be normally distributed.    
 ![qqplot](qqplot.png "QQ Plot") 
-![displot](displot.png "Distplot")
+![displot](displot.png "Distplot")     
 
-Homoscedacity seems to be fairly neutral based on the scatterplot.
+Homoscedacity seems to be fairly neutral based on the scatterplot.      
 ![regplot](regplot.png "Regplot")
 
 ## 4. Conclusions and Future Work
